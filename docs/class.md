@@ -750,7 +750,7 @@ class NewObj extends Object{
   }
 }
 var o = new NewObj({attr: true});
-console.log(o.attr === true);  // false
+console.log(o.attr === true);  // false,这里node v6.2.0下 测试输出为true
 ```
 
 上面代码中，`NewObj`继承了`Object`，但是无法通过`super`方法向父类`Object`传参。这是因为ES6改变了`Object`构造函数的行为，一旦发现`Object`方法不是通过`new Object()`这种形式调用，ES6规定`Object`构造函数会忽略参数。
